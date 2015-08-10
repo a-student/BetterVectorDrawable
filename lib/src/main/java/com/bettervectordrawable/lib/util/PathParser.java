@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2014 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -11,7 +11,7 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package android.util;
+package com.bettervectordrawable.lib.util;
 import android.graphics.Path;
 import android.util.Log;
 import java.util.ArrayList;
