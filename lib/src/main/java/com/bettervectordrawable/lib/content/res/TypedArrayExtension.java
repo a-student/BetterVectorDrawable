@@ -1,6 +1,7 @@
 package com.bettervectordrawable.lib.content.res;
 
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.support.annotation.NonNull;
 
 import com.bettervectordrawable.utils.ReflectionHelper;
@@ -15,5 +16,12 @@ public class TypedArrayExtension {
 
     public static int[] extractThemeAttrs(@NonNull TypedArray self) {
         return ReflectionHelper.tryInvokeMethod(self, _extractThemeAttrsMethod);
+    }
+
+    public static int getChangingConfigurations(@NonNull TypedArray self) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return self.getChangingConfigurations();
+        }
+        return 0;
     }
 }

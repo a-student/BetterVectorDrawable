@@ -19,7 +19,7 @@ public class ReflectionHelper {
         try {
             return target.getDeclaredMethod(name, parameterTypes);
         } catch (Exception e) {
-            Log.e(LOG_TAG, String.format("Unable to find method %s.%s", target.getSimpleName(), name), e);
+            Log.w(LOG_TAG, String.format("Unable to find method %s.%s", target.getSimpleName(), name), e);
         }
         return null;
     }
@@ -40,7 +40,7 @@ public class ReflectionHelper {
                 }
                 throw new RuntimeException(targetException);
             } catch (Exception e) {
-                Log.e(LOG_TAG, String.format("Unable to invoke method %s.%s", method.getDeclaringClass().getSimpleName(), method.getName()), e);
+                Log.w(LOG_TAG, String.format("Unable to invoke method %s.%s", method.getDeclaringClass().getSimpleName(), method.getName()), e);
             }
         }
         return null;
@@ -51,7 +51,7 @@ public class ReflectionHelper {
         try {
             return target.getDeclaredField(name);
         } catch (Exception e) {
-            Log.e(LOG_TAG, String.format("Unable to find field %s.%s", target.getSimpleName(), name), e);
+            Log.w(LOG_TAG, String.format("Unable to find field %s.%s", target.getSimpleName(), name), e);
         }
         return null;
     }
@@ -62,7 +62,7 @@ public class ReflectionHelper {
             try {
                 return (T) field.get(target);
             } catch (Exception e) {
-                Log.e(LOG_TAG, String.format("Unable to get value for field %s.%s", field.getDeclaringClass().getSimpleName(), field.getName()), e);
+                Log.w(LOG_TAG, String.format("Unable to get value for field %s.%s", field.getDeclaringClass().getSimpleName(), field.getName()), e);
             }
         }
         return defaultValue;

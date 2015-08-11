@@ -32,13 +32,14 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
-import android.util.ArrayMap;
+import android.support.v4.util.ArrayMap;
 import android.util.AttributeSet;
 import android.util.LayoutDirection;
 import android.util.Log;
 import android.util.Xml;
 
 import com.bettervectordrawable.lib.R;
+import com.bettervectordrawable.lib.content.res.TypedArrayExtension;
 import com.bettervectordrawable.lib.util.PathParser;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -428,7 +429,7 @@ public class VectorDrawable extends Drawable {
         final VectorDrawableState state = mVectorState;
         final VPathRenderer pathRenderer = state.mVPathRenderer;
         // Account for any configuration changes.
-        state.mChangingConfigurations |= a.getChangingConfigurations();
+        state.mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
         // Extract the theme attributes, if any.
         state.mThemeAttrs = extractThemeAttrs(a);
         final int tintMode = a.getInt(R.styleable.VectorDrawable_tintMode, -1);
@@ -973,7 +974,7 @@ public class VectorDrawable extends Drawable {
         }
         private void updateStateFromTypedArray(TypedArray a) {
             // Account for any configuration changes.
-            mChangingConfigurations |= a.getChangingConfigurations();
+            mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
             // Extract the theme attributes, if any.
             mThemeAttrs = extractThemeAttrs(a);
             mRotate = a.getFloat(R.styleable.VectorDrawableGroup_rotation, mRotate);
@@ -1153,7 +1154,7 @@ public class VectorDrawable extends Drawable {
         }
         private void updateStateFromTypedArray(TypedArray a) {
             // Account for any configuration changes.
-            mChangingConfigurations |= a.getChangingConfigurations();
+            mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
             final String pathName = a.getString(R.styleable.VectorDrawableClipPath_name);
             if (pathName != null) {
                 mPathName = pathName;
@@ -1242,7 +1243,7 @@ public class VectorDrawable extends Drawable {
         }
         private void updateStateFromTypedArray(TypedArray a) {
             // Account for any configuration changes.
-            mChangingConfigurations |= a.getChangingConfigurations();
+            mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
             // Extract the theme attributes, if any.
             mThemeAttrs = extractThemeAttrs(a);
             final String pathName = a.getString(R.styleable.VectorDrawablePath_name);
