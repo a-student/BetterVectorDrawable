@@ -425,6 +425,13 @@ public class VectorDrawable extends Drawable {
         inflateInternal(res, parser, attrs, theme);
         mTintFilter = updateTintFilter(this, mTintFilter, state.mTint, state.mTintMode);
     }
+
+    @Override
+    public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs)
+            throws XmlPullParserException, IOException {
+        inflate(r, parser, attrs, null);
+    }
+
     private void updateStateFromTypedArray(TypedArray a) throws XmlPullParserException {
         final VectorDrawableState state = mVectorState;
         final VPathRenderer pathRenderer = state.mVPathRenderer;
