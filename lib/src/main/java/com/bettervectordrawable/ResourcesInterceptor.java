@@ -46,7 +46,9 @@ public class ResourcesInterceptor {
                 throw new Exception("Unknown type of the field");
             }
         } catch (Exception e) {
-            Log.e(LOG_TAG, "Unable to intercept", e);
+            // Not very bad, it just means we met newer version of Android.
+            // In this case, system will handle vector drawables for us.
+            Log.w(LOG_TAG, "Unable to intercept", e);
         }
     }
 }
