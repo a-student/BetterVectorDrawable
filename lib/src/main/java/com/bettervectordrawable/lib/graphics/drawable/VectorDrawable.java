@@ -840,6 +840,7 @@ public class VectorDrawable extends Drawable {
             // Travese the tree in pre-order to draw.
             drawGroupTree(mRootGroup, IDENTITY_MATRIX, canvas, w, h, filter);
         }
+
         private void drawPath(VGroup vGroup, VPath vPath, Canvas canvas, int w, int h,
                 ColorFilter filter) {
             final float scaleX = w / mViewportWidth;
@@ -850,6 +851,7 @@ public class VectorDrawable extends Drawable {
             vPath.toPath(mPath);
             final Path path = mPath;
             mRenderPath.reset();
+            mRenderPath.setFillType(vPath._fillType);
             if (vPath.isClipPath()) {
                 mRenderPath.addPath(path, mFinalPathMatrix);
                 canvas.clipPath(mRenderPath, Region.Op.REPLACE);
@@ -908,6 +910,7 @@ public class VectorDrawable extends Drawable {
             }
         }
     }
+
     private static class VGroup {
         // mStackedMatrix is only used temporarily when drawing, it combines all
         // the parents' local matrices with the current one.
@@ -1103,14 +1106,19 @@ public class VectorDrawable extends Drawable {
         protected PathParser.PathDataNode[] mNodes = null;
         String mPathName;
         int mChangingConfigurations;
+        Path.FillType _fillType;
+
         public VPath() {
             // Empty constructor.
         }
+
         public VPath(VPath copy) {
             mPathName = copy.mPathName;
             mChangingConfigurations = copy.mChangingConfigurations;
             mNodes = PathParser.deepCopyNodes(copy.mNodes);
+            _fillType = copy._fillType;
         }
+
         public void toPath(Path path) {
             path.reset();
             if (mNodes != null) {
@@ -1159,6 +1167,7 @@ public class VectorDrawable extends Drawable {
             updateStateFromTypedArray(a);
             a.recycle();
         }
+
         private void updateStateFromTypedArray(TypedArray a) {
             // Account for any configuration changes.
             mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
@@ -1170,7 +1179,9 @@ public class VectorDrawable extends Drawable {
             if (pathData != null) {
                 mNodes = PathParser.createNodesFromPathData(pathData);
             }
+            _fillType = Path.FillType.values()[a.getInt(R.styleable.VectorDrawableClipPath_fillType, 0)];
         }
+
         @Override
         public boolean isClipPath() {
             return true;
@@ -1248,6 +1259,7 @@ public class VectorDrawable extends Drawable {
             updateStateFromTypedArray(a);
             a.recycle();
         }
+
         private void updateStateFromTypedArray(TypedArray a) {
             // Account for any configuration changes.
             mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
@@ -1283,7 +1295,9 @@ public class VectorDrawable extends Drawable {
                     R.styleable.VectorDrawablePath_trimPathOffset, mTrimPathOffset);
             mTrimPathStart = a.getFloat(
                     R.styleable.VectorDrawablePath_trimPathStart, mTrimPathStart);
+            _fillType = Path.FillType.values()[a.getInt(R.styleable.VectorDrawablePath_fillType, 0)];
         }
+
         @Override
         public void applyTheme(Theme t) {
             if (mThemeAttrs == null) {

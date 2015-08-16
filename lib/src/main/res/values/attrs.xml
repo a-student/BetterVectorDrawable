@@ -55,6 +55,12 @@
     <attr name="scaleX" format="float" />
     <attr name="scaleY" format="float" />
 
+    <attr name="fillType" format="enum">
+        <enum name="winding" value="0" />
+        <enum name="even_odd" value="1" />
+    </attr>
+
+
     <!-- ========================== -->
     <!--   VectorDrawable class   -->
     <!-- ========================== -->
@@ -75,9 +81,9 @@
         <!-- The intrinsic height of the Vector Drawable. -->
         <attr name="height" />
         <!-- The width of the canvas the drawing is on. -->
-        <attr name="viewportWidth" format="float"/>
+        <attr name="viewportWidth" format="float" />
         <!-- The height of the canvas the drawing is on. -->
-        <attr name="viewportHeight" format="float"/>
+        <attr name="viewportHeight" format="float" />
         <!-- The name of this vector drawable -->
         <attr name="name" />
         <!-- The opacity of the whole vector drawable, as a value between 0
@@ -95,9 +101,9 @@
         <!-- The Y coordinate of the center of rotation of a group -->
         <attr name="pivotY" />
         <!-- The amount to translate the group on X coordinate -->
-        <attr name="translateX" format="float"/>
+        <attr name="translateX" format="float" />
         <!-- The amount to translate the group on Y coordinate -->
-        <attr name="translateY" format="float"/>
+        <attr name="translateY" format="float" />
         <!-- The amount to scale the group on X coordinate -->
         <attr name="scaleX" />
         <!-- The amount to scale the group on X coordinate -->
@@ -129,24 +135,26 @@
         <attr name="trimPathOffset" format="float" />
         <!-- sets the linecap for a stroked path -->
         <attr name="strokeLineCap" format="enum">
-            <enum name="butt" value="0"/>
-            <enum name="round" value="1"/>
-            <enum name="square" value="2"/>
+            <enum name="butt" value="0" />
+            <enum name="round" value="1" />
+            <enum name="square" value="2" />
         </attr>
         <!-- sets the lineJoin for a stroked path -->
         <attr name="strokeLineJoin" format="enum">
-            <enum name="miter" value="0"/>
-            <enum name="round" value="1"/>
-            <enum name="bevel" value="2"/>
+            <enum name="miter" value="0" />
+            <enum name="round" value="1" />
+            <enum name="bevel" value="2" />
         </attr>
         <!-- sets the Miter limit for a stroked path -->
-        <attr name="strokeMiterLimit" format="float"/>
+        <attr name="strokeMiterLimit" format="float" />
+        <attr name="fillType" />
     </declare-styleable>
     <!-- Defines the clip path used in VectorDrawables. -->
     <declare-styleable name="VectorDrawableClipPath">
         <!-- The Name of this path -->
         <attr name="name" />
         <!-- The specification of the operations that define the path  -->
-        <attr name="pathData"/>
+        <attr name="pathData" />
+        <attr name="fillType" />
     </declare-styleable>
 </resources>
