@@ -10,10 +10,10 @@ public class App extends Application {
         super.onCreate();
 
         VectorDrawableCompat.enableResourceInterceptionFor(getResources(),
-                R.drawable.bike_vector,
-                R.drawable.genius_vector,
-                R.drawable.hourglass_vector,
-                R.drawable.target_vector);
+                R.drawable.airplane_vector,
+                R.drawable.bicycle_vector,
+                R.drawable.lamp_vector,
+                R.drawable.rocket_vector);
         // or
         //int[] ids = VectorDrawableCompat.findVectorResourceIdsByConvention(getResources(), R.drawable.class, Convention.ResourceNameHasVectorSuffix);
         //VectorDrawableCompat.enableResourceInterceptionFor(getResources(), ids);

@@ -13,9 +13,9 @@
 
         <View
             android:layout_width="140dp"
-            android:layout_height="80dp"
+            android:layout_height="140dp"
             android:layout_gravity="center"
-            android:background="@drawable/bike_vector"
+            android:background="@drawable/lamp_vector"
             android:paddingBottom="@dimen/vertical_margin"
             android:paddingTop="@dimen/vertical_margin" />
 
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:drawableTop="@drawable/genius_vector"
+            android:drawableTop="@drawable/airplane_vector"
             android:paddingBottom="@dimen/vertical_margin"
             android:paddingTop="@dimen/vertical_margin" />
 
@@ -33,7 +33,7 @@
             android:layout_gravity="center"
             android:paddingBottom="@dimen/vertical_margin"
             android:paddingTop="@dimen/vertical_margin"
-            android:src="@drawable/hourglass_vector" />
+            android:src="@drawable/bicycle_vector" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -41,6 +41,6 @@
             android:layout_gravity="center"
             android:paddingBottom="@dimen/vertical_margin"
             android:paddingTop="@dimen/vertical_margin"
-            android:src="@drawable/target_vector" />
+            android:src="@drawable/rocket_vector" />
     </LinearLayout>
 </ScrollView>
