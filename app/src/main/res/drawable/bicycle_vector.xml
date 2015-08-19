@@ -5,10 +5,8 @@
     better:viewportWidth="100"
     android:viewportHeight="100"
     better:viewportHeight="100"
-    android:width="50dp"
-    better:width="50dp"
-    android:height="50dp"
-    better:height="50dp">
+    android:width="100dp"
+    android:height="100dp">
     <path
         android:pathData="M50 0c27.613 0 50 22.386 50 50s-22.387 50-50 50c-27.614 0-50-22.386-50-50s22.386-50 50-50z"
         better:pathData="M50 0c27.613 0 50 22.386 50 50s-22.387 50-50 50c-27.614 0-50-22.386-50-50s22.386-50 50-50z"

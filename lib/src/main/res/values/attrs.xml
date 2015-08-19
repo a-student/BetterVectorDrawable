@@ -42,18 +42,6 @@
     <!-- Indicates if the drawable needs to be mirrored when its layout direction is
          RTL (right-to-left). -->
     <attr name="autoMirrored" />
-    <attr name="height" format="dimension" />
-    <attr name="width" format="dimension" />
-    <attr name="name" format="string" />
-    <!-- alpha property of the view, as a value between 0 (completely transparent) and 1
-         (completely opaque). -->
-    <attr name="alpha" format="float" />
-    <!-- rotation of the view, in degrees. -->
-    <attr name="rotation" format="float" />
-    <attr name="pivotX" format="float|fraction" />
-    <attr name="pivotY" format="float|fraction" />
-    <attr name="scaleX" format="float" />
-    <attr name="scaleY" format="float" />
 
     <attr name="fillType" format="enum">
         <enum name="winding" value="0" />
@@ -77,42 +65,42 @@
                  RTL (right-to-left). -->
         <attr name="autoMirrored" />
         <!-- The intrinsic width of the Vector Drawable. -->
-        <attr name="width" />
+        <attr name="android:width" />
         <!-- The intrinsic height of the Vector Drawable. -->
-        <attr name="height" />
+        <attr name="android:height" />
         <!-- The width of the canvas the drawing is on. -->
         <attr name="viewportWidth" format="float" />
         <!-- The height of the canvas the drawing is on. -->
         <attr name="viewportHeight" format="float" />
         <!-- The name of this vector drawable -->
-        <attr name="name" />
+        <attr name="android:name" />
         <!-- The opacity of the whole vector drawable, as a value between 0
                  (completely transparent) and 1 (completely opaque). -->
-        <attr name="alpha" />
+        <attr name="android:alpha" />
     </declare-styleable>
     <!-- Defines the group used in VectorDrawables. -->
     <declare-styleable name="VectorDrawableGroup">
         <!-- The name of this group -->
-        <attr name="name" />
+        <attr name="android:name" />
         <!-- The amount to rotate the group -->
-        <attr name="rotation" />
+        <attr name="android:rotation" />
         <!-- The X coordinate of the center of rotation of a group -->
-        <attr name="pivotX" />
+        <attr name="android:pivotX" />
         <!-- The Y coordinate of the center of rotation of a group -->
-        <attr name="pivotY" />
+        <attr name="android:pivotY" />
         <!-- The amount to translate the group on X coordinate -->
         <attr name="translateX" format="float" />
         <!-- The amount to translate the group on Y coordinate -->
         <attr name="translateY" format="float" />
         <!-- The amount to scale the group on X coordinate -->
-        <attr name="scaleX" />
+        <attr name="android:scaleX" />
         <!-- The amount to scale the group on X coordinate -->
-        <attr name="scaleY" />
+        <attr name="android:scaleY" />
     </declare-styleable>
     <!-- Defines the path used in VectorDrawables. -->
     <declare-styleable name="VectorDrawablePath">
         <!-- The name of this path -->
-        <attr name="name" />
+        <attr name="android:name" />
         <!-- The width a path stroke -->
         <attr name="strokeWidth" format="float" />
         <!-- The color to stroke the path if not defined implies no stroke-->
@@ -152,7 +140,7 @@
     <!-- Defines the clip path used in VectorDrawables. -->
     <declare-styleable name="VectorDrawableClipPath">
         <!-- The Name of this path -->
-        <attr name="name" />
+        <attr name="android:name" />
         <!-- The specification of the operations that define the path  -->
         <attr name="pathData" />
         <attr name="fillType" />

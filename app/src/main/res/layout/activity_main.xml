@@ -12,8 +12,8 @@
         android:paddingTop="@dimen/vertical_margin">
 
         <View
-            android:layout_width="140dp"
-            android:layout_height="140dp"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
             android:layout_gravity="center"
             android:background="@drawable/lamp_vector"
             android:paddingBottom="@dimen/vertical_margin"

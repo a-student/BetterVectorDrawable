@@ -461,9 +461,9 @@ public class VectorDrawable extends Drawable {
                     "<vector> tag requires viewportHeight > 0");
         }
         pathRenderer.mBaseWidth = a.getDimension(
-                R.styleable.VectorDrawable_width, pathRenderer.mBaseWidth);
+                R.styleable.VectorDrawable_android_width, pathRenderer.mBaseWidth);
         pathRenderer.mBaseHeight = a.getDimension(
-                R.styleable.VectorDrawable_height, pathRenderer.mBaseHeight);
+                R.styleable.VectorDrawable_android_height, pathRenderer.mBaseHeight);
         if (pathRenderer.mBaseWidth <= 0) {
             throw new XmlPullParserException(a.getPositionDescription() +
                     "<vector> tag requires width > 0");
@@ -471,10 +471,10 @@ public class VectorDrawable extends Drawable {
             throw new XmlPullParserException(a.getPositionDescription() +
                     "<vector> tag requires height > 0");
         }
-        final float alphaInFloat = a.getFloat(R.styleable.VectorDrawable_alpha,
+        final float alphaInFloat = a.getFloat(R.styleable.VectorDrawable_android_alpha,
                 pathRenderer.getAlpha());
         pathRenderer.setAlpha(alphaInFloat);
-        final String name = a.getString(R.styleable.VectorDrawable_name);
+        final String name = a.getString(R.styleable.VectorDrawable_android_name);
         if (name != null) {
             pathRenderer.mRootName = name;
             pathRenderer.mVGTargetsMap.put(name, pathRenderer);
@@ -987,14 +987,14 @@ public class VectorDrawable extends Drawable {
             mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
             // Extract the theme attributes, if any.
             mThemeAttrs = extractThemeAttrs(a);
-            mRotate = a.getFloat(R.styleable.VectorDrawableGroup_rotation, mRotate);
-            mPivotX = a.getFloat(R.styleable.VectorDrawableGroup_pivotX, mPivotX);
-            mPivotY = a.getFloat(R.styleable.VectorDrawableGroup_pivotY, mPivotY);
-            mScaleX = a.getFloat(R.styleable.VectorDrawableGroup_scaleX, mScaleX);
-            mScaleY = a.getFloat(R.styleable.VectorDrawableGroup_scaleY, mScaleY);
+            mRotate = a.getFloat(R.styleable.VectorDrawableGroup_android_rotation, mRotate);
+            mPivotX = a.getFloat(R.styleable.VectorDrawableGroup_android_pivotX, mPivotX);
+            mPivotY = a.getFloat(R.styleable.VectorDrawableGroup_android_pivotY, mPivotY);
+            mScaleX = a.getFloat(R.styleable.VectorDrawableGroup_android_scaleX, mScaleX);
+            mScaleY = a.getFloat(R.styleable.VectorDrawableGroup_android_scaleY, mScaleY);
             mTranslateX = a.getFloat(R.styleable.VectorDrawableGroup_translateX, mTranslateX);
             mTranslateY = a.getFloat(R.styleable.VectorDrawableGroup_translateY, mTranslateY);
-            final String groupName = a.getString(R.styleable.VectorDrawableGroup_name);
+            final String groupName = a.getString(R.styleable.VectorDrawableGroup_android_name);
             if (groupName != null) {
                 mGroupName = groupName;
             }
@@ -1171,7 +1171,7 @@ public class VectorDrawable extends Drawable {
         private void updateStateFromTypedArray(TypedArray a) {
             // Account for any configuration changes.
             mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
-            final String pathName = a.getString(R.styleable.VectorDrawableClipPath_name);
+            final String pathName = a.getString(R.styleable.VectorDrawableClipPath_android_name);
             if (pathName != null) {
                 mPathName = pathName;
             }
@@ -1265,7 +1265,7 @@ public class VectorDrawable extends Drawable {
             mChangingConfigurations |= TypedArrayExtension.getChangingConfigurations(a);
             // Extract the theme attributes, if any.
             mThemeAttrs = extractThemeAttrs(a);
-            final String pathName = a.getString(R.styleable.VectorDrawablePath_name);
+            final String pathName = a.getString(R.styleable.VectorDrawablePath_android_name);
             if (pathName != null) {
                 mPathName = pathName;
             }
