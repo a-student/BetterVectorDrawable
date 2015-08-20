@@ -1,4 +1,9 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = 'com.bettervectordrawable'
+version = '0.2'
 
 android {
     compileSdkVersion 22
@@ -8,11 +13,10 @@ android {
         minSdkVersion 14
         targetSdkVersion 22
         versionCode 1
-        versionName "1.0"
+        versionName version
     }
     buildTypes {
         release {
-            minifyEnabled false
             consumerProguardFiles 'proguard-rules.pro'
         }
     }
@@ -20,5 +24,72 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:appcompat-v7:22.2.1+'
+}
+
+def siteUrl = 'https://github.com/a-student/BetterVectorDrawable'
+def gitUrl = siteUrl + '.git'
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+
+                name 'The VectorDrawable implementation for Android 4.0+'
+                url siteUrl
+
+                licenses {
+                }
+                developers {
+                    developer {
+                        id 'a-student'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = 'a-student'
+    key = properties.getProperty('bintray.apikey')
+
+    configurations = ['archives']
+    publish = true
+    pkg {
+        repo = 'maven'
+        name = 'BetterVectorDrawable'
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ['Apache-2.0']
+    }
 }
