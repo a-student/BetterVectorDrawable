@@ -93,5 +93,8 @@ It corresponds to the **fill-rule** attribute in SVG and accepts two values: `wi
 If you have any problems with the lib, please create an issue on GitHub (https://github.com/a-student/BetterVectorDrawable/issues/new)
 and explain the reproducing steps.
 
+## License
+It is [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
+
 ## Alternatives
 There is an attempt to add VectorDrawableCompat to the official support library https://android.googlesource.com/platform/frameworks/support/+/master/v7/vectordrawable/
