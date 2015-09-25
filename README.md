@@ -48,7 +48,7 @@ Usually it is OK to use this method by default. Nevertheless, it may increase ap
 
 #### Less convenient, but faster
 ```java
-int[] ids = VectorDrawableCompat.findVectorResourceIdsByConvention(getResources(), R.drawable.class, Convention.ResourceNameHasVectorSuffix);
+int[] ids = VectorDrawableCompat.findVectorResourceIdsByConvention(getResources(), R.drawable.class, Convention.RESOURCE_NAME_HAS_VECTOR_SUFFIX);
 VectorDrawableCompat.enableResourceInterceptionFor(getResources(), ids);
 ```
 This method uses resource naming convention to find vector resources.
@@ -109,7 +109,7 @@ DisplayMetrics metrics = context.getResources().getDisplayMetrics();
 Bitmap bitmap = BitmapUtil.toBitmap(gradientDrawable, metrics, 60f, 0, 60f, 60f);
 ```
 
-In that case resultant `Bitmap` will have 60dp x 60dp size, because `GradientDrawable#getIntrinsicHeight()` will return `-1`.
+In that case resultant `Bitmap` will have 60dp x 60dp size, because `GradientDrawable#getIntrinsicHeight()` returns `-1`.
 
 ## Path’s fillType attribute
 The lib additionally supports specifying `better:fillType` attribute on a path. This gives you ability to control how the inside of the path is determined.
@@ -120,7 +120,7 @@ If you have any problems with the lib, please create an issue on GitHub (https:/
 and explain the reproducing steps.
 
 ## License
-It is [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
+[Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 ## Alternatives
 There is an attempt to add VectorDrawableCompat to the official support library https://android.googlesource.com/platform/frameworks/support/+/master/v7/vectordrawable/

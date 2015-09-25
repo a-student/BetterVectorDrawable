@@ -1,7 +1,7 @@
 package com.bettervectordrawable;
 
 public enum Convention {
-    ResourceNameHasVectorPrefix,
-    ResourceNameHasVectorSuffix,
-    ResourceNameHasVectorPrefixOrSuffix
+    RESOURCE_NAME_HAS_VECTOR_PREFIX,
+    RESOURCE_NAME_HAS_VECTOR_SUFFIX,
+    RESOURCE_NAME_HAS_VECTOR_PREFIX_OR_SUFFIX
 }

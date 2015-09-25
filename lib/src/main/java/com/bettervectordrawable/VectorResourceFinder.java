@@ -81,11 +81,11 @@ public class VectorResourceFinder {
                 vectorSuffix = "_vector";
         resourceName = resourceName.toLowerCase();
         switch (resourceNamingConvention) {
-            case ResourceNameHasVectorPrefix:
+            case RESOURCE_NAME_HAS_VECTOR_PREFIX:
                 return resourceName.startsWith(vectorPrefix);
-            case ResourceNameHasVectorSuffix:
+            case RESOURCE_NAME_HAS_VECTOR_SUFFIX:
                 return resourceName.endsWith(vectorSuffix);
-            case ResourceNameHasVectorPrefixOrSuffix:
+            case RESOURCE_NAME_HAS_VECTOR_PREFIX_OR_SUFFIX:
                 return resourceName.startsWith(vectorPrefix) || resourceName.endsWith(vectorSuffix);
             default:
                 throw new IllegalArgumentException();
