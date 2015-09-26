@@ -21,7 +21,7 @@ public class ResourcesInterceptor {
         tryIntercept();
     }
 
-    private static boolean _intercepted;
+    private static boolean _intercepted, _interceptionSuccessful;
 
     @SuppressWarnings("unchecked")
     private static void tryIntercept() {
@@ -45,10 +45,15 @@ public class ResourcesInterceptor {
             } else {
                 throw new Exception("Unknown type of the field");
             }
+            _interceptionSuccessful = true;
         } catch (Exception e) {
             // Not very bad, it just means we met newer version of Android.
             // In this case, system will handle vector drawables for us.
             Log.w(LOG_TAG, "Unable to intercept", e);
         }
+    }
+
+    public static boolean isInterceptionEnabled() {
+        return _interceptionSuccessful;
     }
 }

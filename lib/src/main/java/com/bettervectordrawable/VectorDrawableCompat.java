@@ -98,4 +98,12 @@ public class VectorDrawableCompat {
     private static boolean isSystemHandling(boolean forceSystemHandlingWhenPossible) {
         return forceSystemHandlingWhenPossible && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
+
+    /**
+     * Returns {@value true} if resource interception was successful.
+     * Check this after calling {@link #enableResourceInterceptionFor}.
+     */
+    public static boolean isResourceInterceptionEnabled() {
+        return ResourcesInterceptor.isInterceptionEnabled();
+    }
 }

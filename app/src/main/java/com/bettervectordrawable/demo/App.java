@@ -20,5 +20,9 @@ public class App extends Application {
         // or
         //int[] ids = VectorDrawableCompat.findAllVectorResourceIdsSlow(getResources(), R.drawable.class);
         //VectorDrawableCompat.enableResourceInterceptionFor(getResources(), ids);
+
+        if (BuildConfig.DEBUG && !VectorDrawableCompat.isResourceInterceptionEnabled()) {
+            throw new AssertionError();
+        }
     }
 }
