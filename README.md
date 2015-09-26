@@ -8,7 +8,7 @@ The [VectorDrawable](https://developer.android.com/reference/android/graphics/dr
 
 The lib is deployed to the JCenter repository, so just add this line to the **build.gradle** *dependencies* section:
 ```groovy
-compile 'com.bettervectordrawable:lib:0.4+'
+compile 'com.bettervectordrawable:lib:0.5+'
 ```
 
 ## Usage
