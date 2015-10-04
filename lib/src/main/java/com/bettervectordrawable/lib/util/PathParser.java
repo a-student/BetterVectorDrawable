@@ -601,7 +601,7 @@ public class PathParser {
             // Taken from equations at: http://spaceroots.org/documents/ellipse/node8.html
             // and http://www.spaceroots.org/documents/ellipse/node22.html
             // Maximum of 45 degrees per cubic Bezier segment
-            int numSegments = Math.abs((int) Math.ceil(sweep * 4 / Math.PI));
+            int numSegments = (int) Math.ceil(Math.abs(sweep * 4 / Math.PI));
             double eta1 = start;
             double cosTheta = Math.cos(theta);
             double sinTheta = Math.sin(theta);
