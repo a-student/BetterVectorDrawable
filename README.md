@@ -86,7 +86,7 @@ To make it easier for you, use [SVG to VectorDrawable Converter](https://github.
 See section **BetterVectorDrawable library** there for the converter command, which produces vector drawables understandable by the lib.
 
 ## Converting vector drawable to Bitmap
-The lib contains the util class to allow you to convert almost any drawable to a Bitmap. [Read more](docs/BitmapUtil.md)
+The lib contains the util class that allows you to convert almost any drawable to a Bitmap. [Read more.](docs/BitmapUtil.md)
 
 ## Path’s fillType attribute
 The lib additionally supports specifying `better:fillType` attribute on a path. This gives you ability to control how the inside of the path is determined.
