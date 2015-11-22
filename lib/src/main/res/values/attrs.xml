@@ -77,6 +77,18 @@
         <!-- The opacity of the whole vector drawable, as a value between 0
                  (completely transparent) and 1 (completely opaque). -->
         <attr name="android:alpha" />
+        <!-- Left optical inset.
+             @hide Until optical insets are fully supported. -->
+        <attr name="opticalInsetLeft" format="dimension" />
+        <!-- Top optical inset.
+             @hide Until optical insets are fully supported. -->
+        <attr name="opticalInsetTop" format="dimension" />
+        <!-- Right optical inset.
+             @hide Until optical insets are fully supported. -->
+        <attr name="opticalInsetRight" format="dimension" />
+        <!-- Bottom optical inset.
+             @hide Until optical insets are fully supported. -->
+        <attr name="opticalInsetBottom" format="dimension" />
     </declare-styleable>
     <!-- Defines the group used in VectorDrawables. -->
     <declare-styleable name="VectorDrawableGroup">
