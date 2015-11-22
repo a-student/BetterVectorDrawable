@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Demo</string>
+    <string name="all_button_text">Show all</string>
 </resources>
