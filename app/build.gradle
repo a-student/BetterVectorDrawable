@@ -5,6 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
+        generatedDensities = []
         applicationId "com.bettervectordrawable.demo"
         minSdkVersion 14
         targetSdkVersion 23
