@@ -10,7 +10,7 @@ Alternative to the automatic generation of PNGs from vector drawables at build t
 
 The lib is deployed to the JCenter repository, so just add this line to the **build.gradle** *dependencies* section:
 ```groovy
-compile 'com.bettervectordrawable:lib:0.5+'
+compile 'com.bettervectordrawable:lib:0.6+'
 ```
 In addition, you will need to disable automatic generation of PNGs at build time by adding `generatedDensities = []` line to the *defaultConfig* section:
 ```groovy
