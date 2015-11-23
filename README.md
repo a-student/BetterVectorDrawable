@@ -1,5 +1,7 @@
 ﻿# BetterVectorDrawable
-The [VectorDrawable](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html) implementation for Android 4.0+ (API level 14 or greater)
+The [VectorDrawable](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html) implementation for Android 4.0+ (API level 14 or greater).
+
+Alternative to the automatic generation of PNGs from vector drawables at build time by Android Plugin for Gradle 1.5.0+. The lib saves APK size and properly supports SVG’s fill rule (see [below](#paths-filltype-attribute)).
 
 *Keywords: vector drawable, support library, compat, svg*
 
@@ -9,6 +11,13 @@ The [VectorDrawable](https://developer.android.com/reference/android/graphics/dr
 The lib is deployed to the JCenter repository, so just add this line to the **build.gradle** *dependencies* section:
 ```groovy
 compile 'com.bettervectordrawable:lib:0.5+'
+```
+In addition, you will need to disable automatic generation of PNGs at build time by adding `generatedDensities = []` line to the *defaultConfig* section:
+```groovy
+defaultConfig {
+    generatedDensities = []
+    …
+}
 ```
 
 ## Usage
@@ -98,6 +107,3 @@ and explain the reproducing steps.
 
 ## License
 [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt)
-
-## Alternatives
-There is an attempt to add VectorDrawableCompat to the official support library https://android.googlesource.com/platform/frameworks/support/+/master/v7/vectordrawable/
