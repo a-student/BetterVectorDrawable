@@ -62,11 +62,15 @@ public class VectorResourceFinder {
     }
 
     public static int[] findIdsByConvention(@NonNull Resources resources, @NonNull Class<?> rDrawable, @NonNull Convention resourceNamingConvention) {
+        findIdsByConvention(resources, rDrawable, resourceNamingConvention, "vector_", "_vector")
+    }
+
+    public static int[] findIdsByConvention(@NonNull Resources resources, @NonNull Class<?> rDrawable, @NonNull Convention resourceNamingConvention, String vectorPrefix, String vectorSuffix) {
         ArrayList<Integer> result = new ArrayList<>();
 
         for (Field field : rDrawable.getDeclaredFields()) {
             try {
-                if (nameMatchesConvention(field.getName(), resourceNamingConvention)) {
+                if (nameMatchesConvention(field.getName(), resourceNamingConvention, vectorPrefix, vectorSuffix)) {
                     result.add(field.getInt(null));
                 }
             } catch (Exception ignored) {
@@ -76,9 +80,7 @@ public class VectorResourceFinder {
         return Ints.toArray(result);
     }
 
-    private static boolean nameMatchesConvention(String resourceName, Convention resourceNamingConvention) {
-        final String vectorPrefix = "vector_",
-                vectorSuffix = "_vector";
+    private static boolean nameMatchesConvention(String resourceName, Convention resourceNamingConvention, String vectorPrefix, String vectorSuffix) {
         resourceName = resourceName.toLowerCase();
         switch (resourceNamingConvention) {
             case RESOURCE_NAME_HAS_VECTOR_PREFIX:
