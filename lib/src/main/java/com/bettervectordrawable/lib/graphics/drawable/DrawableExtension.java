@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 
@@ -55,7 +56,11 @@ public class DrawableExtension {
             case 15:
                 return Mode.SCREEN;
             case 16:
-                return Mode.ADD;
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                    return Mode.ADD;
+                } else {
+                    return defaultMode;
+                }
             default:
                 return defaultMode;
         }
