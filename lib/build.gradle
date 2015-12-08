@@ -3,7 +3,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'com.bettervectordrawable'
-version = '0.6'
+version = '0.7'
 
 android {
     compileSdkVersion 22
@@ -12,7 +12,7 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 3
+        versionCode 4
         versionName version
     }
     buildTypes {

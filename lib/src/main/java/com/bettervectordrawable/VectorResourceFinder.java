@@ -62,7 +62,7 @@ public class VectorResourceFinder {
     }
 
     public static int[] findIdsByConvention(@NonNull Resources resources, @NonNull Class<?> rDrawable, @NonNull Convention resourceNamingConvention) {
-        findIdsByConvention(resources, rDrawable, resourceNamingConvention, "vector_", "_vector")
+        return findIdsByConvention(resources, rDrawable, resourceNamingConvention, "vector_", "_vector");
     }
 
     public static int[] findIdsByConvention(@NonNull Resources resources, @NonNull Class<?> rDrawable, @NonNull Convention resourceNamingConvention, String vectorPrefix, String vectorSuffix) {
