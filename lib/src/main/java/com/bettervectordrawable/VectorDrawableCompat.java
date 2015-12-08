@@ -68,6 +68,22 @@ public class VectorDrawableCompat {
     }
 
     /**
+     * Find all vector resources in the app by resource naming convention.
+     * Opposite to {@link #findAllVectorResourceIdsSlow} this method does not load resources, thus it is faster.
+     * <p/>
+     * The method relies on that every vector resource name has the prefix or the suffix, or both.
+     * This can be controlled by {@param resourceNamingConvention}.
+     *
+     * @param resources Pass {@code getResources()}
+     * @param rDrawable Pass {@code R.drawable.class}
+     * @param prefix Pass prefix convention
+     * @param suffix Pass suffix convention
+     */
+    public static int[] findVectorResourceIdsByConvention(@NonNull Resources resources, @NonNull Class<?> rDrawable, @NonNull Convention resourceNamingConvention, String prefix, String suffix) {
+        return VectorResourceFinder.findIdsByConvention(resources, rDrawable, resourceNamingConvention, prefix, suffix);
+    }
+
+    /**
      * Overload for {@link #inflate(boolean, Resources, int)}
      * with {@code forceSystemHandlingWhenPossible = false}
      */
