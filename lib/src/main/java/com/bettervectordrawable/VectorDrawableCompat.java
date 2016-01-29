@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.bettervectordrawable.lib.graphics.drawable.VectorDrawable;
@@ -87,6 +88,7 @@ public class VectorDrawableCompat {
      * Overload for {@link #inflate(boolean, Resources, int)}
      * with {@code forceSystemHandlingWhenPossible = false}
      */
+    @Nullable
     public static Drawable inflate(@NonNull Resources resources, @DrawableRes int id) {
         return inflate(false, resources, id);
     }
@@ -102,13 +104,19 @@ public class VectorDrawableCompat {
      * @return An object that can be used to draw this resource
      */
     @SuppressLint("NewApi")
+    @Nullable
     public static Drawable inflate(boolean forceSystemHandlingWhenPossible, @NonNull Resources resources, @DrawableRes int id) {
         boolean systemHandling = isSystemHandling(forceSystemHandlingWhenPossible);
         Log.d(LOG_TAG, String.format("Inflating resource with id #0x%s (system handling: %s)", Integer.toHexString(id), systemHandling));
         if (systemHandling) {
             return resources.getDrawable(id, null);
         }
-        return VectorDrawable.create(resources, id);
+        try {
+            return VectorDrawable.create(resources, id);
+        }
+        catch (Resources.NotFoundException e) {
+            return null;
+        }
     }
 
     private static boolean isSystemHandling(boolean forceSystemHandlingWhenPossible) {
