@@ -3,6 +3,8 @@ The [VectorDrawable](https://developer.android.com/reference/android/graphics/dr
 
 Alternative to the automatic generation of PNGs from vector drawables at build time by Android Plugin for Gradle 1.5.0+. The lib saves APK size and properly supports SVG’s fill rule (see [below](#paths-filltype-attribute)).
 
+Xamarin version of BetterVectorDrawable can be found [here](https://github.com/VysotskiVadim/XamarinBetterVectorDrawable). 
+
 *Keywords: vector drawable, support library, compat, svg*
 
 ## Attaching the library
