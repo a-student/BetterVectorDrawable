@@ -1,4 +1,7 @@
-﻿# BetterVectorDrawable
+## `@Deprecated`
+Official [Android Support Library 23.2](http://android-developers.blogspot.ru/2016/02/android-support-library-232.html) added support for Vector Drawables and Animated Vector Drawables. Please, use that. This lib is still usable, but it is no longer maintained.
+
+# BetterVectorDrawable
 The [VectorDrawable](https://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html) implementation for Android 4.0+ (API level 14 or greater).
 
 Alternative to the automatic generation of PNGs from vector drawables at build time by Android Plugin for Gradle 1.5.0+. The lib saves APK size and properly supports SVG’s fill rule (see [below](#paths-filltype-attribute)).
