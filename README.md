@@ -96,8 +96,11 @@ For a complete list of attributes, which must be duplicated, see [attrs.xml](lib
 (duplicate attributes do not have `android:` prefix).
 
 To make it easier for you, use [SVG to VectorDrawable Converter](https://github.com/a-student/SvgToVectorDrawableConverter).
-
-See section **BetterVectorDrawable library** there for the converter command, which produces vector drawables understandable by the lib.
+To produce vector drawables for this lib, append to the converter command the `--lib BetterVectorDrawable` argument like
+```
+svg2vd.exe -i * --lib BetterVectorDrawable
+```
+This command creates vector drawables containing additional attributes that are understandable by the lib.
 
 ## Converting vector drawable to Bitmap
 The lib contains the util class that allows you to convert almost any drawable to a Bitmap. [Read more.](docs/BitmapUtil.md)
